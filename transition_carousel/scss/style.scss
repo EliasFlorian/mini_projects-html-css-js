@@ -3,7 +3,7 @@
 body {
   width: 100%;
   min-height: 100vh;
-  background: #222;
+  background: #333;
   display: grid;
   place-items: center;
 }
@@ -15,6 +15,7 @@ body {
   grid: "all" 1fr/1fr;
   align-items: center;
   overflow-x: hidden;
+  border-radius: 1rem;
 
   > * {
     grid-area: all;
@@ -24,7 +25,7 @@ body {
     height: max-content;
     z-index: 5;
     padding: 0.5rem 1rem;
-    background: rgba(211, 225, 245, 0.7);
+    background: rgba(211, 225, 245, 0.9);
     border-radius: 0.4rem;
     transition: transform 250ms;
     cursor: pointer;
@@ -48,5 +49,38 @@ body {
     &.hidden {
       visibility: hidden;
     }
+  }
+}
+
+@keyframes animateFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes animateFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes animateToLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes animateToRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
   }
 }
